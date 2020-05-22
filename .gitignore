@@ -1,0 +1,6 @@
+/image
+/dist
+/node_modules
+/bin
+.vscode
+*.zip

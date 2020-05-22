@@ -1,0 +1,23 @@
+{
+  "name": "img_process",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --trace-warnings app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "app-module-path": "^2.2.0",
+    "canvas": "^2.6.1",
+    "chalk": "^4.0.0",
+    "changedpi": "^1.0.4",
+    "image-size": "^0.8.3",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.9.15",
+    "move-file": "^2.0.0"
+  }
+}
