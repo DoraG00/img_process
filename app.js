@@ -11,14 +11,12 @@ const chalk = require('chalk')
 const moveFile = require('move-file');
 const Canvas = require('canvas')
 const base64ToImage = require('base64-to-image')
-// const { changeDpiDataUrl, changeDpiBlob } = require('changedpi')
-// const { saveAs } = require('file-saver')
-const gm = require('gm')
 const log = console.log
 
 let filenames = fs.readdirSync('./image');
 
 filenames = _.filter(filenames, isImage)
+const total = filenames.length;
 
 const fileInfos = _.map(filenames, name => {
   const { width, height } = sizeOf(`./image/${name}`)
@@ -45,8 +43,17 @@ _.map(Object.keys(imageGrouped), folderName => {
       const context = canvas.getContext('2d');
       context.drawImage(img, 0, 0, width, height);
 
-      const dataUrl = canvas.toDataURL('image/png')
-      log(chalk.yellow('PROCESSING ... ', folderName, index, image.name, count))
+      const dataUrl = canvas.toDataURL()
+      log(chalk.yellow('PROCESSING ... ', count),
+        chalk.blue('FOLDER: ', folderName), 
+        chalk.cyan('SUBINDEX', index), 
+        chalk.magenta('FILENAME: ', image.name), 
+        chalk.yellow('REMAIN: ', total - count)
+      )
+
+      if(count === total) {
+        log(chalk.blueBright(`=============  ${total} IMAGES HAS BEEN PROCESSED =========`))
+      }
 
       const img72 = changeDpiDataUrl(dataUrl, 72);
       const filename = image.name.substring(0, image.name.length - 4)

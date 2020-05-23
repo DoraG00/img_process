@@ -15,7 +15,7 @@ fs.readFile(__dirname + '/902158870009.png', function(err, data) {
         var canvas = Canvas.createCanvas(img.width, img.height);
         var ctx = canvas.getContext('2d');
         ctx.drawImage(img, 0, 0, img.width, img.height);
-        const dataUrl = canvas.toDataURL('image/png')
+        const dataUrl = canvas.toDataURL()
         const img72 = changeDpiDataUrl(dataUrl, 72);
         // console.log(10, img72)
         const dir = path.join(__dirname, 'dist', 'special', '72');
