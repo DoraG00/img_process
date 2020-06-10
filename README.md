@@ -1,7 +1,14 @@
+ENV node -v 10.6.3
+
+## Step 1: create folders at root directory
 `/image`  -- folder to put origin/raw images there
 `/dist` -- folder of images which has been processed
-## RUN `npm start`
 
+## Step 2: put images into `/images` folder(NO SUBFILERS)
+
+## Step 3: edit /config/index.js to connect redis
+
+## Step 4: RUN `npm start`
 script will process images from /image to /dist
 
 step 1: the image will be categorized by width & height in associated folder named `width_height`
