@@ -15,7 +15,7 @@
     "atob": "^2.1.2",
     "base64-to-image": "^1.0.2",
     "btoa": "^1.2.1",
-    "canvas": "^2.6.1",
+    "canvas": "^2.11.2",
     "chalk": "^4.0.0",
     "image-size": "^0.8.3",
     "ioredis": "^4.17.3",
